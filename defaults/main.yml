@@ -25,6 +25,26 @@ bind_default_release: ""
 #      bind_service
 bind_service: "{{ bind_package }}"
 
+### bind_enabled
+#   Should BIND service be enabled.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_enabled
+bind_enabled: true
+
+### bind_state
+#   BIND service state.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_state
+bind_state: started
+
 ### bind_conf_dir
 #   Directory with BIND configuration file.
 #

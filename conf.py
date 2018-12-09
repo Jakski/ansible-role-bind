@@ -17,6 +17,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import re
 
+
 def get_latest_version(changelog):
     '''Retrieve latest version of package from changelog file.'''
     # Match strings like "## [1.2.3] - 2017-02-02"
