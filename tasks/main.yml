@@ -23,8 +23,6 @@
     group: bind
     mode: 0644
     validate: named-checkzone "{{ item.0 }}" "%s"
-  vars:
-    current_zone: "{{ item.0 }}"
   loop: "{{ bind_zones|dictsort }}"
   notify:
     - Reload BIND
