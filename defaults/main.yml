@@ -1,0 +1,101 @@
+---
+### bind_package
+#   System package with BIND.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_package
+bind_package: bind9
+
+### bind_default_release
+#   Default BIND package release.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_default_release
+bind_default_release: ""
+
+### bind_service
+#   BIND system service name.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_service
+bind_service: "{{ bind_package }}"
+
+### bind_conf_dir
+#   Directory with BIND configuration file.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_conf_dir
+bind_conf_dir: /etc/bind
+
+### bind_zones_dir
+#   Directory with BIND zone files.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_zones_dir
+bind_zones_dir: "{{ bind_conf_dir }}/zones"
+
+### bind_conf_file
+#   Main BIND configuration file.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_conf_file
+bind_conf_file: "{{ bind_conf_dir }}/named.conf.local"
+
+### bind_options_file
+#   File with with BIND options.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_options_file
+bind_options_file: "{{ bind_conf_dir }}/named.conf.options"
+
+
+### bind_conf_template
+#   Template for main configuration file.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_conf_template
+bind_conf_template: named.conf.j2
+
+### bind_options_template
+#   Template for options file.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_options_template
+bind_options_template: named.conf.options.j2
+
+### bind_zones
+#   BIND zones definitions.
+#
+#   Default:
+#
+#   .. lookup-yaml:: defaults/main.yml
+#
+#      bind_zones
+bind_zones: {}

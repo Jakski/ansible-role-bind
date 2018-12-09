@@ -1,0 +1,11 @@
+---
+- name: Start BIND
+  service:
+    name: "{{ bind_service }}"
+    state: started
+    enabled: true
+
+- name: Reload BIND
+  service:
+    name: "{{ bind_service }}"
+    state: reloaded

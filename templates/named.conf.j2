@@ -1,0 +1,7 @@
+// {{ ansible_managed }}
+{% for zone in bind_zones|sort %}
+zone "{{ zone }}" {
+	type master;
+	file "{{ bind_zones_dir }}/{{ zone }}";
+};
+{% endfor %}

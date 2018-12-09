@@ -1,0 +1,15 @@
+---
+- hosts: instance
+  tasks:
+    - name: Install dnsutils for tests
+      apt:
+        name: dnsutils
+        state: present
+    - import_role:
+        name: bind
+      vars:
+        bind_zones:
+          # Newlines are enforced, because named-checkzone
+          # throws warning otherwise.
+          test.local: "{{ lookup('file', 'test.local') }}\n"
+          test2.local: "{{ lookup('file', 'test2.local') }}\n"
