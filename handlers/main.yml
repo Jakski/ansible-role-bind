@@ -1,5 +1,5 @@
 ---
-- name: Start BIND
+- name: Configure BIND service
   service:
     name: "{{ bind_service }}"
     state: "{{ bind_state }}"

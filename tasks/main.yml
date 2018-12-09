@@ -5,7 +5,7 @@
     default_release: "{{ bind_default_release }}"
     state: present
   notify:
-    - Start BIND
+    - Configure BIND service
 
 - name: Create main BIND configuration file
   template:
