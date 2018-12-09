@@ -7,28 +7,6 @@
   notify:
     - Configure BIND service
 
-- name: Create main BIND configuration file
-  template:
-    src: "{{ bind_conf_template }}"
-    dest: "{{ bind_conf_file }}"
-    owner: root
-    group: bind
-    mode: 0644
-    validate: named-checkconf "%s"
-  notify:
-    - Reload BIND
-
-- name: Create BIND options file
-  template:
-    src: "{{ bind_options_template }}"
-    dest: "{{ bind_options_file }}"
-    owner: root
-    group: bind
-    mode: 0644
-    validate: named-checkconf "%s"
-  notify:
-    - Reload BIND
-
 - name: Create BIND zones directory
   file:
     path: "{{ bind_zones_dir }}"
@@ -48,5 +26,27 @@
   vars:
     current_zone: "{{ item.0 }}"
   loop: "{{ bind_zones|dictsort }}"
+  notify:
+    - Reload BIND
+
+- name: Create main BIND configuration file
+  template:
+    src: "{{ bind_conf_template }}"
+    dest: "{{ bind_conf_file }}"
+    owner: root
+    group: bind
+    mode: 0644
+    validate: named-checkconf "%s"
+  notify:
+    - Reload BIND
+
+- name: Create BIND options file
+  template:
+    src: "{{ bind_options_template }}"
+    dest: "{{ bind_options_file }}"
+    owner: root
+    group: bind
+    mode: 0644
+    validate: named-checkconf "%s"
   notify:
     - Reload BIND
