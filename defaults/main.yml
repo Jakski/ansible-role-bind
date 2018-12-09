@@ -12,11 +12,7 @@ bind_package: bind9
 ### bind_default_release
 #   Default BIND package release.
 #
-#   Default:
-#
-#   .. lookup-yaml:: defaults/main.yml
-#
-#      bind_default_release
+#   Default: ""
 bind_default_release: ""
 
 ### bind_service

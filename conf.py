@@ -142,7 +142,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ansible-role-bind.tex', 'ansible-role-bind Documentation',
+    (master_doc, 'ansible-role-bind.tex', '',
      author, 'manual'),
 ]
 
@@ -152,7 +152,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'ansible-role-bind', 'Ansible role - BIND',
+    (master_doc, 'ansible-role-bind', '',
      [author], 1)
 ]
 
@@ -164,6 +164,6 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'ansible-role-bind', 'ansible-role-bind Documentation',
-     author, 'ansible-role-bind', 'Ansible role - BIND',
+     author, 'ansible-role-bind', '',
      'Miscellaneous'),
 ]
