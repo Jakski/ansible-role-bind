@@ -1,6 +1,8 @@
 ansible-role-bind
 *****************
 
+Ansible role to setup the Berkeley Internet Name Domain.
+
 
 Variables
 =========
@@ -15,7 +17,7 @@ bind_package
 bind_default_release
    Default BIND package release.
 
-   Default:
+   Default: ""
 
 bind_service
    BIND system service name.
@@ -92,3 +94,16 @@ Examples
              # throws warning otherwise.
              test.local: "{{ lookup('file', 'test.local') }}\n"
              test2.local: "{{ lookup('file', 'test2.local') }}\n"
+
+
+Documentation
+=============
+
+Compile:
+
+   $ pip3 install -r requirements.txt
+   $ make man
+
+View:
+
+   $ man ./docs/man/ansible-role-bind.1
