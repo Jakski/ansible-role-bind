@@ -4,8 +4,12 @@
     name: "{{ bind_package }}"
     default_release: "{{ bind_default_release }}"
     state: present
-  notify:
-    - Configure BIND service
+
+- name: Configure BIND service
+  service:
+    name: "{{ bind_service }}"
+    state: "{{ bind_state }}"
+    enabled: "{{ bind_enabled }}"
 
 - name: Create BIND zones directory
   file:

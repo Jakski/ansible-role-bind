@@ -1,10 +1,4 @@
 ---
-- name: Configure BIND service
-  service:
-    name: "{{ bind_service }}"
-    state: "{{ bind_state }}"
-    enabled: "{{ bind_enabled }}"
-
 - name: Reload BIND
   service:
     name: "{{ bind_service }}"
