@@ -5,12 +5,6 @@
     default_release: "{{ bind_default_release }}"
     state: present
 
-- name: Configure BIND service
-  service:
-    name: "{{ bind_service }}"
-    state: "{{ bind_state }}"
-    enabled: "{{ bind_enabled }}"
-
 - name: Create BIND zones directory
   file:
     path: "{{ bind_zones_dir }}"
@@ -52,3 +46,9 @@
     validate: named-checkconf "%s"
   notify:
     - Reload BIND
+
+- name: Configure BIND service
+  service:
+    name: "{{ bind_service }}"
+    state: "{{ bind_state }}"
+    enabled: "{{ bind_enabled }}"
